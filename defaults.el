@@ -26,6 +26,7 @@
     tab-width 4                            ; Set width for tabs
     uniquify-buffer-name-style 'forward    ; Uniquify buffer names
     window-combination-resize t            ; Resize windows proportionally
+    debug-on-error t                       ; Show debug info on error
     x-stretch-cursor t)                    ; Stretch cursor to the glyph width
 
 (delete-selection-mode 1)                  ; Replace region when inserting text
