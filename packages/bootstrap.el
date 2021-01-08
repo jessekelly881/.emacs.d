@@ -24,5 +24,7 @@
  use-package-always-ensure t
  )
 
+(use-package bug-hunter) ; Automated error hunting for elisp
+
 (provide 'bootstrap)
 ;;; bootstrap.el ends here
