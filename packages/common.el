@@ -3,8 +3,10 @@
 
 ;;; Code:
 (use-package general)
+(use-package which-key
+  :custom (setq which-key-idle-delay 0.4)
+  :config (which-key-mode))
 
-;; Evil
 (use-package evil
   :init
   (setq evil-want-keybinding nil)
@@ -20,6 +22,7 @@
 (use-package evil-surround
   :general
   (nmap "S" 'evil-surround-edit)
+  (vmap "S" 'evil-surround-region)
   :config
   (global-evil-surround-mode 1))
 
@@ -30,8 +33,8 @@
   ("C-h a"   'helm-apropos)
   ("M-x"     'helm-M-x)
   ("C-x C-f" 'helm-find-files)
-  (nmap :prefix "SPC" "SPC" 'helm-M-x)
-  (vmap :prefix "SPC" "SPC" 'helm-M-x))
+  (nmap :prefix leader-key "SPC" 'helm-M-x)
+  (vmap :prefix leader-key "SPC" 'helm-M-x))
 
 (provide 'common)
 ;;; common.el ends here
