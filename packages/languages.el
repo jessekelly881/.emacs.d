@@ -5,7 +5,7 @@
 
 (use-package haskell-mode)
 (use-package rust-mode)
-(use-package python-django))
+(use-package python-django)
 
 (use-package clojure-mode
   :custom
@@ -41,11 +41,6 @@
 
 
 ;; Misc
-
-(use-package nand2tetris
-  :init (setq nand2tetris-core-base-dir "~/dev/projects/nand2tetris")
-  :config (add-to-list 'auto-mode-alist '("\\.hdl\\'" . nand2tetris-mode))
-  :mode ("\\.hdl\\'" . nand2tetris-mode))
 
 (use-package ledger-mode
   :mode ("\\.ledger\\'")
