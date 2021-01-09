@@ -19,17 +19,17 @@
 (use-package dart-mode)
 
 (use-package typescript-mode
-  :config (add-to-list 'auto-mode-alist '("\\.tsx$"  . typescript-mode)))
+  :hook (typescript-mode . lsp)
+  :config
+  (add-to-list 'lsp-language-id-configuration '(typescript-mode . "typescriptreact"))
+  (add-to-list 'auto-mode-alist '("\\.jsx$"  . typescript-mode))
+  (add-to-list 'auto-mode-alist '("\\.tsx$"  . typescript-mode)))
 
 (use-package coffee-mode
   :mode ("\\.coffee\\'" . coffee-mode))
 
 (use-package pug-mode
   :mode ("\\.pug\\'" . pug-mode))
-
-(use-package js2-mode
-  :hook (js-mode . js2-minor-mode))
-
 
 ;; Config file modes
 

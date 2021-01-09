@@ -24,7 +24,6 @@
 (use-package hide-mode-line)
 (use-package helm-themes :after (helm))
 (use-package centered-cursor-mode)
-
 (use-package focus
   :config (add-to-list 'focus-mode-to-thing '(typescript-mode . paragraph)))
 
@@ -49,7 +48,10 @@
         (olivetti-mode 1)
         (git-gutter-mode -1)
         (linum-relative-mode -1)
-        (setq-local inhibit-message t)
+        (setq-local
+         inhibit-message t
+         truncate-lines t)
+
         (focus-mode 1)
         (set-window-fringes (selected-window) 0 0)
         (unless (derived-mode-p 'prog-mode)
@@ -66,14 +68,37 @@
       (set-window-fringes (selected-window) nil) ; Use default
     ))
 
-(load-theme 'solarized-gruvbox-dark t)
+(define-minor-mode j/collapsed-mode
+  "Focus mode"
+  :lighter "Collapsed"
+  (if j/collapsed-mode
+      (progn (hs-minor-mode 1) (hs-hide-all))
+    (hs-minor-mode -1)
+    ))
+
+
+(load-theme 'solarized-gruvbox-light t)
 (add-to-list 'default-frame-alist
              '(font . "DejaVu Sans Mono-11"))
+
+
+;; Fix line truncation
+
+(add-hook 'text-mode-hook '(lambda ()
+    (setq truncate-lines nil
+          word-wrap t)))
+
+(add-hook 'prog-mode-hook '(lambda ()
+    (setq truncate-lines t
+          word-wrap nil)))
+
+;; Delete trailing whitespace on save
 
 (add-hook 'write-file-hooks 'delete-trailing-whitespace)
 
 (general-def 'normal :prefix visual-key
   "f" '(j/focus-mode :which-key "Focus")
+  "c" '(j/collapsed-mode :which-key "Collapse")
   "t" '(helm-themes :which-key "Theme"))
 
 
