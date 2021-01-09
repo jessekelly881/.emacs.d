@@ -88,10 +88,5 @@
   (nmap :prefix insert-key "l"
         '(lorem-ipsum-insert-paragraphs :which-key "Lorem")))
 
-(use-package olivetti
-  :custom
-  (olivetti-body-width 0.60)
-  (olivetti-minimum-body-width 72))
-
 (provide 'common)
 ;;; common.el ends here

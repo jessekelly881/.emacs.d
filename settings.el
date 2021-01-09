@@ -5,8 +5,8 @@
 
 ;; Variables
 (setq
- user-mail-address "kellyjesse881@gmail.com"
  user-full-name "Jesse Kelly"
+ user-mail-address "kellyjesse881@gmail.com"
  calendar-latitude 19.4326
  calendar-longitude -99.1332
  calendar-location-name "Mexico City, MX"
