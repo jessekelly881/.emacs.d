@@ -3,15 +3,22 @@
 
 ;;; Code:
 (use-package general)
+(use-package crux)
 
 (use-package company
   :hook (after-init . global-company-mode)
-  :config (add-to-list 'company-backends 'company-files)
+  :config (push 'company-files company-backends)
   :custom (company-idle-delay 0.5))
 
 (use-package which-key
   :custom (setq which-key-idle-delay 0.4)
-  :config (which-key-mode))
+  :config
+  (which-key-mode)
+
+  ;; Add descriptions to root keys
+  (which-key-add-key-based-replacements visual-key "UI")         ; UI
+  (which-key-add-key-based-replacements insert-key "Insert")     ; Insert
+  )
 
 (use-package evil
   :init
@@ -62,7 +69,8 @@
 
 (use-package lsp-mode)
 (use-package lsp-ui)
-
+(use-package company-lsp
+  :config (push 'company-lsp company-backends))
 
 (use-package saveplace ; Saves location within buffer
   :hook (after-init . save-place-mode))
@@ -74,6 +82,16 @@
   :hook (prog-mode . linum-relative-on)
   :general
   (nmap :prefix visual-key "l" 'linum-relative-mode))
+
+(use-package lorem-ipsum
+  :general
+  (nmap :prefix insert-key "l"
+        '(lorem-ipsum-insert-paragraphs :which-key "Lorem")))
+
+(use-package olivetti
+  :custom
+  (olivetti-body-width 0.60)
+  (olivetti-minimum-body-width 72))
 
 (provide 'common)
 ;;; common.el ends here

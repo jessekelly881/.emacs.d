@@ -6,7 +6,7 @@
 
 (use-package git-gutter
   :general
-  (nmap :prefix leader-key "SPC" 'helm-M-x)
+  (nmap :prefix visual-key "g" 'git-gutter:toggle)
   :custom
   (git-gutter:modified-sign "~")
   (git-gutter:added-sign    "+")
