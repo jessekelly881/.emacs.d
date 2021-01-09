@@ -62,7 +62,6 @@
       (setq inhibit-message nil)
       (git-gutter-mode 1)
       (focus-mode -1)
-      (hide-mode-line-mode -1)
       (linum-relative-mode 1)
       (set-window-fringes (selected-window) nil) ; Use default
     ))

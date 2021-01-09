@@ -15,9 +15,11 @@
 ;; Web
 
 (use-package web-mode)
-(use-package typescript-mode)
 (use-package elm-mode)
 (use-package dart-mode)
+
+(use-package typescript-mode
+  :config (add-to-list 'auto-mode-alist '("\\.tsx$"  . typescript-mode)))
 
 (use-package coffee-mode
   :mode ("\\.coffee\\'" . coffee-mode))
