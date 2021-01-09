@@ -15,6 +15,7 @@
 ;; Web
 
 (use-package web-mode)
+(use-package typescript-mode)
 (use-package elm-mode)
 (use-package dart-mode)
 

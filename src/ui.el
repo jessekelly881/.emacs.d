@@ -24,7 +24,9 @@
 (use-package hide-mode-line)
 (use-package helm-themes :after (helm))
 (use-package centered-cursor-mode)
-(use-package focus)
+
+(use-package focus
+  :config (add-to-list 'focus-mode-to-thing '(typescript-mode . paragraph)))
 
 (use-package linum-relative
   :config
@@ -32,9 +34,7 @@
   :custom
   (linum-format " %d  ")
   (linum-relative-backend 'display-line-numbers-mode)
-  :hook (prog-mode . linum-relative-on)
-  :general
-  (nmap :prefix visual-key "l" 'linum-relative-mode))
+  :hook (prog-mode . linum-relative-on))
 
 (use-package olivetti
   :custom
@@ -48,12 +48,15 @@
       (progn
         (olivetti-mode 1)
         (git-gutter-mode -1)
-        (hide-mode-line-mode 1)
         (linum-relative-mode -1)
         (setq-local inhibit-message t)
         (focus-mode 1)
         (set-window-fringes (selected-window) 0 0)
-        (unless (derived-mode-p 'prog-mode) (centered-cursor-mode 1)))
+        (unless (derived-mode-p 'prog-mode)
+          (progn
+            (hide-mode-line-mode 1)
+            (centered-cursor-mode 1))
+          ))
       (centered-cursor-mode -1)
       (olivetti-mode -1)
       (setq inhibit-message nil)
