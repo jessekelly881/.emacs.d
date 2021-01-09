@@ -3,6 +3,7 @@
 
 ;;; Code:
 (use-package general)
+
 (use-package which-key
   :custom (setq which-key-idle-delay 0.4)
   :config (which-key-mode))
@@ -12,7 +13,12 @@
   (setq evil-want-keybinding nil)
   :config
   (general-evil-setup t)
-  (evil-mode 1))
+  (evil-mode 1)
+  (general-def 'normal ; Very general keybindings
+    "<escape>" 'save-buffer
+    "<backtab>" 'evil-jump-forward
+    "TAB" 'evil-jump-backward
+    ))
 
 (use-package evil-collection
   :after evil
@@ -35,6 +41,10 @@
   ("C-x C-f" 'helm-find-files)
   (nmap :prefix leader-key "SPC" 'helm-M-x)
   (vmap :prefix leader-key "SPC" 'helm-M-x))
+
+(use-package multiple-cursors)
+(use-package flycheck
+  :config (global-flycheck-mode))
 
 (provide 'common)
 ;;; common.el ends here
