@@ -2,6 +2,7 @@
 ;;; Commentary:
 
 ;;; Code:
+
 (use-package general)
 (use-package crux)
 
@@ -55,9 +56,6 @@
   (vmap :prefix leader-key "SPC" 'helm-M-x))
 
 (use-package multiple-cursors)
-(use-package flycheck
-  :config (global-flycheck-mode))
-
 (use-package avy
   :config
   (general-def 'normal ; Very general keybindings

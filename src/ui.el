@@ -24,6 +24,7 @@
 (use-package hide-mode-line)
 (use-package helm-themes :after (helm))
 (use-package centered-cursor-mode)
+(use-package focus)
 
 (use-package linum-relative
   :config
@@ -50,12 +51,14 @@
         (hide-mode-line-mode 1)
         (linum-relative-mode -1)
         (setq-local inhibit-message t)
+        (focus-mode 1)
         (set-window-fringes (selected-window) 0 0)
         (unless (derived-mode-p 'prog-mode) (centered-cursor-mode 1)))
       (centered-cursor-mode -1)
       (olivetti-mode -1)
       (setq inhibit-message nil)
       (git-gutter-mode 1)
+      (focus-mode -1)
       (hide-mode-line-mode -1)
       (linum-relative-mode 1)
       (set-window-fringes (selected-window) nil) ; Use default
