@@ -5,8 +5,6 @@
 (use-package git-timemachine)
 
 (use-package git-gutter
-  :general
-  (nmap :prefix visual-key "g" 'git-gutter:toggle)
   :custom
   (git-gutter:modified-sign "~")
   (git-gutter:added-sign    "+")

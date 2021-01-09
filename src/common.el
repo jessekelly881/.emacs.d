@@ -75,14 +75,6 @@
 (use-package saveplace ; Saves location within buffer
   :hook (after-init . save-place-mode))
 
-(use-package linum-relative
-  :custom
-  (linum-format " %d  ")
-  (linum-relative-backend 'display-line-numbers-mode)
-  :hook (prog-mode . linum-relative-on)
-  :general
-  (nmap :prefix visual-key "l" 'linum-relative-mode))
-
 (use-package lorem-ipsum
   :general
   (nmap :prefix insert-key "l"
