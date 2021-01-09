@@ -25,6 +25,5 @@
 (load (expand-file-name "packages/index.el" user-emacs-directory))
 (load (expand-file-name "ui.el" user-emacs-directory))
 
-
 (provide 'init)
 ;;; init.el ends here

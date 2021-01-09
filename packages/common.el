@@ -4,6 +4,11 @@
 ;;; Code:
 (use-package general)
 
+(use-package company
+  :hook (after-init . global-company-mode)
+  :config (add-to-list 'company-backends 'company-files)
+  :custom (company-idle-delay 0.5))
+
 (use-package which-key
   :custom (setq which-key-idle-delay 0.4)
   :config (which-key-mode))
@@ -45,6 +50,22 @@
 (use-package multiple-cursors)
 (use-package flycheck
   :config (global-flycheck-mode))
+
+(use-package avy
+  :config
+  (general-def 'normal ; Very general keybindings
+    "f" 'avy-goto-char-timer
+    "F" 'avy-goto-line
+    "t" 'avy-goto-char-in-line
+    )
+  )
+
+(use-package lsp-mode)
+(use-package lsp-ui)
+
+
+(use-package saveplace ; Saves location within buffer
+  :hook (after-init . save-place-mode))
 
 (provide 'common)
 ;;; common.el ends here
