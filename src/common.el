@@ -56,6 +56,11 @@
   (nmap :prefix leader-key "SPC" 'helm-M-x)
   (vmap :prefix leader-key "SPC" 'helm-M-x))
 
+(use-package helm-swoop
+  :after helm
+  :general
+  (nmap "/" 'helm-swoop))
+
 (use-package multiple-cursors)
 (use-package avy
   :config
