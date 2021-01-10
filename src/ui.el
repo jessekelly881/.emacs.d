@@ -16,13 +16,14 @@
 (use-package flatland-black-theme)
 (use-package atom-dark-theme)
 
+(use-package helm-themes :after (helm))
+
 ;; Modeline:
 
+(use-package hide-mode-line)
 (use-package powerline
   :config (powerline-center-evil-theme))
 
-(use-package hide-mode-line)
-(use-package helm-themes :after (helm))
 (use-package centered-cursor-mode)
 (use-package focus
   :config (add-to-list 'focus-mode-to-thing '(typescript-mode . paragraph)))
