@@ -109,6 +109,7 @@
   "t" '(helm-themes :which-key "Theme"))
 
 (general-def 'normal "q" 'j/quit)
+(general-def 'visual "TAB" 'indent-region)
 (general-def 'normal :prefix leader-key
   "c" '(j/open-config :which-key "Config"))
 
