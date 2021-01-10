@@ -85,8 +85,12 @@
   (modus-themes-intense-hl-line t))
 
 (use-package undo-tree
-  :config (global-undo-tree-mode t)
-  :general (nmap "U" 'undo-tree-visualize))
+  :config
+  (global-undo-tree-mode t)
+  (general-def 'normal
+    "U" 'undo-tree-visualize
+    "u" 'undo-tree-undo
+    "C-r" 'undo-tree-redo))
 
 (add-to-list 'default-frame-alist
              '(font . "Hack-12"))
