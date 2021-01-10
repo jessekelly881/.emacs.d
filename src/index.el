@@ -21,12 +21,17 @@
 (straight-use-package 'use-package)
 (setq
  straight-use-package-by-default t
- use-package-always-ensure t
- )
+ use-package-always-ensure t)
+
+;; Backup emacs 'state'
+(progn
+  (desktop-save-mode)
+  (desktop-read))
 
 (use-package bug-hunter) ; Automated error hunting for elisp
 
 
+(load (expand-file-name "src/utils.el" user-emacs-directory))
 (load (expand-file-name "src/common.el" user-emacs-directory))
 (load (expand-file-name "src/languages.el" user-emacs-directory))
 (load (expand-file-name "src/vc.el" user-emacs-directory))

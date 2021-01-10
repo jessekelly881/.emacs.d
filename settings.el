@@ -68,5 +68,6 @@
 (scroll-bar-mode -1)                                           ; Hide the scroll bar
 
 
+
 (provide 'settings)
 ;;; settings.el ends here

@@ -106,13 +106,14 @@
    ((not (one-window-p)) (kill-buffer-and-window))
    (t (kill-current-buffer))))
 
-(general-def 'normal
-  "q" 'j/quit)
-
 (general-def 'normal :prefix visual-key
   "f" '(j/focus-mode :which-key "Focus")
   "c" '(j/collapsed-mode :which-key "Collapse")
   "t" '(helm-themes :which-key "Theme"))
+
+(general-def 'normal "q" 'j/quit)
+(general-def 'normal :prefix leader-key
+  "c" '(j/open-config :which-key "Config"))
 
 (provide 'ui)
 ;;; ui.el ends here
