@@ -1,6 +1,9 @@
 
 ;;; Code:
 
+;; F-keys (Major control keys)
+(bind-key* "<f7>" #'j/update-packages)             ;; F7 - Update packages
+
 ;; Themes:
 (use-package ample-theme)
 (use-package anti-zenburn-theme)
@@ -19,7 +22,6 @@
 (use-package helm-themes :after (helm))
 
 ;; Modeline:
-
 (use-package hide-mode-line)
 (use-package powerline
   :config (powerline-center-evil-theme))

@@ -15,3 +15,10 @@
    ((org-buffer-narrowed-p) (widen))
    ((not (one-window-p)) (kill-buffer-and-window))
    (t (kill-current-buffer))))
+
+;; Update packages
+(defun j/update-packages ()
+  "Update all packages"
+  (interactive)
+  (when (y-or-n-p "Update all available packages?")
+    (straight-pull-all)))

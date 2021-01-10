@@ -67,9 +67,7 @@
   (general-def 'normal ; Very general keybindings
     "f" 'avy-goto-char-timer
     "F" 'avy-goto-line
-    "t" 'avy-goto-char-in-line
-    )
-  )
+    "t" 'avy-goto-char-in-line))
 
 (use-package lsp-mode)
 
@@ -83,8 +81,6 @@
   :general
   (nmap :prefix insert-key "l"
         '(lorem-ipsum-insert-paragraphs :which-key "Lorem")))
-
-
 
 (use-package elfeed
   :config (elfeed-update)
