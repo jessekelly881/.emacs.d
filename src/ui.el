@@ -94,18 +94,6 @@
 (global-prettify-symbols-mode +1)
 (add-hook 'write-file-hooks 'delete-trailing-whitespace)
 
-;; Custom quit function
-
-(defun j/quit ()
-  "An overloaded quit function.  Takes context into account."
-  (interactive)
-  (cond
-   ((bound-and-true-p loccur-mode) (loccur-current))
-   ((buffer-narrowed-p) (widen))
-   ((org-buffer-narrowed-p) (widen))
-   ((not (one-window-p)) (kill-buffer-and-window))
-   (t (kill-current-buffer))))
-
 (general-def 'normal :prefix visual-key
   "f" '(j/focus-mode :which-key "Focus")
   "c" '(j/collapsed-mode :which-key "Collapse")
