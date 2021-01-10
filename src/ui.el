@@ -79,11 +79,14 @@
     (hs-minor-mode -1)
     ))
 
-
 (use-package modus-themes
   :config (load-theme 'modus-operandi t)
   :custom
   (modus-themes-intense-hl-line t))
+
+(use-package undo-tree
+  :config (global-undo-tree-mode t)
+  :general (nmap "U" 'undo-tree-visualize))
 
 (add-to-list 'default-frame-alist
              '(font . "Hack-12"))
