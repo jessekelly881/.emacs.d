@@ -23,5 +23,10 @@
 (use-package magit-todos
   :hook (after-init . magit-todos-mode))
 
+(general-def 'normal :prefix git-key
+  "s" '(magit :which-key "Status")
+  "t" '(git-timemachine :which-key "Timemachine"))
+
+
 (provide 'vc)
 ;;; vc.el ends here

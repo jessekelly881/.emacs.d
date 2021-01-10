@@ -19,6 +19,7 @@
   ;; Add descriptions to root keys
   (which-key-add-key-based-replacements visual-key "UI")         ; UI
   (which-key-add-key-based-replacements insert-key "Insert")     ; Insert
+  (which-key-add-key-based-replacements git-key "Git")           ; Git
   )
 
 (use-package evil
