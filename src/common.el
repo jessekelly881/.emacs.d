@@ -78,5 +78,21 @@
   (nmap :prefix insert-key "l"
         '(lorem-ipsum-insert-paragraphs :which-key "Lorem")))
 
+
+
+(use-package elfeed
+  :config (elfeed-update)
+  :custom
+  (elfeed-feeds
+   '(
+     ("http://nullprogram.com/feed/" blog emacs)
+     "http://www.50ply.com/atom.xml"  ; no autotagging
+     ("http://nedroid.com/feed/" webcomic)
+     ("http://nedroid.com/feed/" webcomic)
+     "https://lukesmith.xyz/rss.xml"
+     "https://videos.lukesmith.xyz/feeds/videos.xml?accountId=3"
+     )))
+
+
 (provide 'common)
 ;;; common.el ends here

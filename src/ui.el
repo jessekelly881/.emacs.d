@@ -1,6 +1,7 @@
 
 ;;; Code:
 
+;; Themes:
 (use-package ample-theme)
 (use-package anti-zenburn-theme)
 (use-package blackboard-theme)
@@ -14,6 +15,11 @@
 (use-package sublime-themes)
 (use-package flatland-black-theme)
 (use-package atom-dark-theme)
+
+;; Modeline:
+
+(use-package powerline
+  :config (powerline-center-evil-theme))
 
 (use-package hide-mode-line)
 (use-package helm-themes :after (helm))

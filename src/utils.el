@@ -2,7 +2,7 @@
 ; Open emacs config in dired buffer.
 (defun j/open-config ()
   (interactive)
-  (dired-jump (expand-file-name "src" user-emacs-directory)))
+  (find-file-other-window (expand-file-name "src" user-emacs-directory)))
 
 
 ;; Contextual quit function. I.e. "kill the thing!"
