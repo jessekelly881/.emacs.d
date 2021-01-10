@@ -31,6 +31,7 @@
 (load (expand-file-name "src/languages.el" user-emacs-directory))
 (load (expand-file-name "src/vc.el" user-emacs-directory))
 (load (expand-file-name "src/ui.el" user-emacs-directory))
+(load (expand-file-name "src/org.el" user-emacs-directory))
 
 (provide 'index)
 ;;; index.el ends here

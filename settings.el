@@ -12,11 +12,11 @@
  calendar-location-name "Mexico City, MX"
  )
 
-;; Key bindings
 (setq
  leader-key "SPC"                                     ; SPC
- visual-key (concat leader-key " v")                  ; SPC v
+ git-key (concat leader-key " g")                     ; SPC g
  insert-key (concat leader-key " i")                  ; SPC i
+ visual-key (concat leader-key " v")                  ; SPC v
  )
 
 ;; General settings
@@ -65,6 +65,7 @@
 (set-default-coding-systems 'utf-8)                            ; Default to utf-8 encoding
 (toggle-scroll-bar -1)                                         ; Hide scroll bar
 (tool-bar-mode -1)                                             ; Hide toolbar
+(scroll-bar-mode -1)                                           ; Hide the scroll bar
 
 
 (provide 'settings)

@@ -66,13 +66,6 @@
   )
 
 (use-package lsp-mode)
-(use-package lsp-ui
-  :config
-  (general-def 'normal :prefix visual-key ; Very general keybindings
-    "m" '(lsp-ui-imenu :which-key "Menu")))
-
-(add-hook 'after-init-hook #'global-flycheck-mode)
-
 
 (use-package company-lsp
   :config (push 'company-lsp company-backends))

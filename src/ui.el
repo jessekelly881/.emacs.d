@@ -7,17 +7,11 @@
 (use-package clues-theme)
 (use-package espresso-theme)
 (use-package faff-theme)
-(use-package github-theme)
-(use-package monochrome-theme)
-(use-package nord-theme)
 (use-package paper-theme)
-(use-package plan9-theme)
 (use-package soft-stone-theme)
 (use-package solarized-theme)
 (use-package subatomic-theme)
 (use-package sublime-themes)
-(use-package tango-plus-theme)
-(use-package zenburn-theme)
 (use-package flatland-black-theme)
 (use-package atom-dark-theme)
 
@@ -77,10 +71,13 @@
     ))
 
 
-(load-theme 'solarized-gruvbox-light t)
-(add-to-list 'default-frame-alist
-             '(font . "DejaVu Sans Mono-11"))
+(use-package modus-themes
+  :config (load-theme 'modus-operandi t)
+  :custom
+  (modus-themes-intense-hl-line t))
 
+(add-to-list 'default-frame-alist
+             '(font . "Hack-12"))
 
 ;; Fix line truncation
 
@@ -94,13 +91,28 @@
 
 ;; Delete trailing whitespace on save
 
+(global-prettify-symbols-mode +1)
 (add-hook 'write-file-hooks 'delete-trailing-whitespace)
+
+;; Custom quit function
+
+(defun j/quit ()
+  "An overloaded quit function.  Takes context into account."
+  (interactive)
+  (cond
+   ((bound-and-true-p loccur-mode) (loccur-current))
+   ((buffer-narrowed-p) (widen))
+   ((org-buffer-narrowed-p) (widen))
+   ((not (one-window-p)) (kill-buffer-and-window))
+   (t (kill-current-buffer))))
+
+(general-def 'normal
+  "q" 'j/quit)
 
 (general-def 'normal :prefix visual-key
   "f" '(j/focus-mode :which-key "Focus")
   "c" '(j/collapsed-mode :which-key "Collapse")
   "t" '(helm-themes :which-key "Theme"))
-
 
 (provide 'ui)
 ;;; ui.el ends here
