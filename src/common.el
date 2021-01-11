@@ -58,9 +58,7 @@
   (vmap :prefix leader-key "SPC" 'helm-M-x))
 
 (use-package helm-swoop
-  :after helm
-  :general
-  (nmap "/" 'helm-swoop))
+  :general (nmap "/" 'helm-swoop))
 
 (use-package multiple-cursors
   :config (multiple-cursors-mode t)
@@ -109,6 +107,12 @@
      "https://videos.lukesmith.xyz/feeds/videos.xml?accountId=3"
      )))
 
+(use-package smartparens
+  :hook (prog-mode . smartparens-strict-mode))
+
+;; Make evil play nice with smartparens.
+(use-package evil-smartparens
+  :hook (smartparens-enabled-hook . evil-smartparens-mode))
 
 (provide 'common)
 ;;; common.el ends here
