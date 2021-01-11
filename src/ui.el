@@ -44,6 +44,9 @@
   (linum-relative-backend 'display-line-numbers-mode)
   :hook (prog-mode . linum-relative-on))
 
+(use-package dumb-jump
+  :general (nmap "g d" 'dumb-jump-go-other-window))
+
 (use-package olivetti
   :custom
   (olivetti-body-width 0.65)
