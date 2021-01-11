@@ -108,7 +108,9 @@
      )))
 
 (use-package smartparens
-  :hook (prog-mode . smartparens-strict-mode))
+  :hook
+  (prog-mode . smartparens-strict-mode)
+  (text-mode . smartparens-strict-mode))
 
 ;; Make evil play nice with smartparens.
 (use-package evil-smartparens

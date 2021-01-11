@@ -113,6 +113,13 @@
 (global-prettify-symbols-mode +1)
 (add-hook 'write-file-hooks 'delete-trailing-whitespace)
 
+(use-package rainbow-delimiters
+  :hook (prog-mode . rainbow-delimiters-mode))
+
+(use-package highlight-thing ;; Highlight all instances of a 'thing'
+  :config (global-highlight-thing-mode)
+  :hook (prog-mode . highlight-thing-mode))
+
 (general-def 'normal :prefix visual-key
   "f" '(j/focus-mode :which-key "Focus")
   "c" '(j/collapsed-mode :which-key "Collapse")
