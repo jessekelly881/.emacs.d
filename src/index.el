@@ -25,10 +25,6 @@
 
 (use-package bug-hunter) ; Automated error hunting for elisp
 
-;; Backup emacs 'state'
-(progn
-  (desktop-save-mode)
-  (desktop-read))
 
 (load (expand-file-name "src/utils.el" user-emacs-directory))
 (load (expand-file-name "src/common.el" user-emacs-directory))
