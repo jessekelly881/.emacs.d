@@ -32,8 +32,7 @@
   (general-def 'normal ; Very general keybindings
     "<escape>" 'save-buffer
     "<backtab>" 'evil-jump-forward
-    "TAB" 'evil-jump-backward
-    ))
+    "TAB" 'evil-jump-backward))
 
 (use-package evil-collection
   :after evil
@@ -59,6 +58,8 @@
 
 (use-package helm-swoop
   :general (nmap "/" 'helm-swoop))
+
+(use-package helm-ag)
 
 (use-package multiple-cursors
   :config (multiple-cursors-mode t)

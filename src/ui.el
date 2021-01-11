@@ -23,8 +23,14 @@
 
 ;; Modeline:
 (use-package hide-mode-line)
+(use-package minions
+  :config (minions-mode t))
+
 (use-package powerline
-  :config (powerline-center-evil-theme))
+  :config
+  (defpowerline powerline-major-mode "")
+  (defpowerline powerline-minor-modes minions-mode-line-modes)
+  (powerline-center-evil-theme))
 
 (use-package centered-cursor-mode)
 (use-package focus
