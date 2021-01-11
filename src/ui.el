@@ -123,5 +123,8 @@
 (general-def 'normal :prefix leader-key
   "c" '(j/open-config :which-key "Config"))
 
+(use-package hl-todo
+  :config (global-hl-todo-mode))
+
 (provide 'ui)
 ;;; ui.el ends here
