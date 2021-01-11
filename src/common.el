@@ -20,7 +20,7 @@
   (which-key-add-key-based-replacements visual-key "UI")         ; UI
   (which-key-add-key-based-replacements insert-key "Insert")     ; Insert
   (which-key-add-key-based-replacements git-key "Git")           ; Git
-  (which-key-add-key-based-replacements git-key "Export")        ; Export
+  (which-key-add-key-based-replacements export-key "Export")     ; Export
   )
 
 (use-package evil
