@@ -20,6 +20,7 @@
   (which-key-add-key-based-replacements visual-key "UI")         ; UI
   (which-key-add-key-based-replacements insert-key "Insert")     ; Insert
   (which-key-add-key-based-replacements git-key "Git")           ; Git
+  (which-key-add-key-based-replacements git-key "Export")        ; Export
   )
 
 (use-package evil
@@ -81,6 +82,11 @@
   :general
   (nmap :prefix insert-key "l"
         '(lorem-ipsum-insert-paragraphs :which-key "Lorem")))
+
+(use-package webpaste
+  :general
+  (nmap :prefix export-key "w" 'webpaste-paste-buffer)
+  (vmap :prefix export-key "w" 'webpaste-paste-region))
 
 (use-package elfeed
   :config (elfeed-update)

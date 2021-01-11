@@ -17,6 +17,7 @@
  git-key (concat leader-key " g")                     ; SPC g
  insert-key (concat leader-key " i")                  ; SPC i
  visual-key (concat leader-key " v")                  ; SPC v
+ export-key (concat leader-key " x")                  ; SPC x
  )
 
 ;; General settings
