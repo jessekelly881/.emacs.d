@@ -62,10 +62,18 @@
   :general
   (nmap "/" 'helm-swoop))
 
-(use-package multiple-cursors)
+(use-package multiple-cursors
+  :config (multiple-cursors-mode t)
+  :general
+  (vmap "a" 'mc/mark-all-like-this
+    "p" 'mc/mark-previous-like-this
+    "n" 'mc/mark-next-like-this
+    "RET" 'mc/skip-to-next-like-this
+    "DEL" 'mc/skip-to-previous-like-this))
+
 (use-package avy
   :config
-  (general-def 'normal ; Very general keybindings
+  (nmap
     "f" 'avy-goto-char-timer
     "F" 'avy-goto-line
     "t" 'avy-goto-char-in-line))
