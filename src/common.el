@@ -25,11 +25,17 @@
 
 (use-package evil
   :init
+  (setq-default evil-symbol-word-search t)
   (setq evil-want-keybinding nil)
   :config
   (general-evil-setup t)
   (evil-mode 1)
-  (general-def 'normal ; Very general keybindings
+
+  ; Make evil treat an Emacs symbol as a word
+  (defalias #'forward-evil-word #'forward-evil-symbol)
+
+; Very general keybindings
+  (general-def 'normal
     "<escape>" 'save-buffer
     "<backtab>" 'evil-jump-forward
     "TAB" 'evil-jump-backward))
