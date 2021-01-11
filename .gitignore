@@ -4,3 +4,5 @@ places
 .emacs.desktop
 .emacs.desktop.lock
 url
+/projectile-bookmarks.eld
+.lsp-session-v1
