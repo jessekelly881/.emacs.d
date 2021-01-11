@@ -84,6 +84,9 @@
   :custom
   (modus-themes-intense-hl-line t))
 
+(use-package expand-region
+  :general (vmap "v" 'er/expand-region))
+
 (use-package undo-tree
   :config
   (global-undo-tree-mode t)
