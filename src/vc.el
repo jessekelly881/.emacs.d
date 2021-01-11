@@ -16,8 +16,11 @@
   :custom
   (magit-stage-all-confirm nil)
   (magit-unstage-all-confirm nil)
+  (git-commit-summary-max-length 50)
+  (git-commit-fill-column 72)
   (git-commit-major-mode 'org-mode)
   :hook
+  (after-save-hook . magit-after-save-refresh-status)
   (git-commit-mode . evil-normal-state))
 
 (use-package magit-todos
