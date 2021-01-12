@@ -86,9 +86,6 @@
 
 (use-package lsp-mode)
 
-(use-package company-lsp
-  :config (push 'company-lsp company-backends))
-
 (use-package saveplace ; Saves location within buffer
   :hook (after-init . save-place-mode))
 

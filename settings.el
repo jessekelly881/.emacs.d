@@ -54,6 +54,7 @@
     window-combination-resize t                                ; Resize windows proportionally
     user-init-file (or load-file-name (buffer-file-name))
     user-emacs-directory (file-name-directory user-init-file)
+    header-line-format t                                       ; Make header line blank
     x-stretch-cursor t)                                        ; Stretch cursor to the glyph width
 
 (delete-selection-mode 1)                                      ; Replace region when inserting text
