@@ -25,6 +25,7 @@
 
 (setq-default
     ad-redefinition-action 'accept                             ; Silence warnings for redefinition
+    auto-revert-verbose nil
     auto-save-default nil                                      ; Stop creating #autosave# files
     auto-save-list-file-prefix nil                             ; Prevent tracking for auto-saves
     cursor-in-non-selected-windows nil                         ; Hide the cursor in inactive windows
@@ -35,6 +36,7 @@
     delete-by-moving-to-trash t                                ; Delete files to trash
     fill-column 80                                             ; Set width for automatic line breaks
     gc-cons-threshold (* 8 1024 1024)                          ; We're not using Game Boys anymore
+    header-line-format t                                       ; Make header line blank
     help-window-select t                                       ; Focus new help windows when opened
     indent-tabs-mode nil                                       ; Stop using tabs to indent
     inhibit-startup-screen t                                   ; Disable start-up screen
@@ -51,10 +53,9 @@
     show-paren-delay 0                                         ; Highlight matching paren without delay
     tab-width 4                                                ; Set width for tabs
     uniquify-buffer-name-style 'forward                        ; Uniquify buffer names
-    window-combination-resize t                                ; Resize windows proportionally
-    user-init-file (or load-file-name (buffer-file-name))
     user-emacs-directory (file-name-directory user-init-file)
-    header-line-format t                                       ; Make header line blank
+    user-init-file (or load-file-name (buffer-file-name))
+    window-combination-resize t                                ; Resize windows proportionally
     x-stretch-cursor t)                                        ; Stretch cursor to the glyph width
 
 (delete-selection-mode 1)                                      ; Replace region when inserting text
@@ -69,6 +70,7 @@
 (toggle-scroll-bar -1)                                         ; Hide scroll bar
 (tool-bar-mode -1)                                             ; Hide toolbar
 (scroll-bar-mode -1)                                           ; Hide the scroll bar
+(global-auto-revert-mode t)                                    ; Autorevert buffer when file changed on disk
 
 
 
